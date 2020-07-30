@@ -1,0 +1,2534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UppercomputerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Button_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Control_layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="type" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Upper_layer" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="control-location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doughnut_Chart_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="资料格式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="数据类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以上位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以下位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="通道数量" Type="int" Nullable="false" />
+          <Property Name="Name_Text" Type="nchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Event_message">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="类型" Type="int" Nullable="false" />
+          <Property Name="设备" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="设备_地址" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="设备_具体地址" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="位触发条件" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="字触发条件" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="字触发条件_具体" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="报警内容" Type="nchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="General parameters of picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-picture" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-picture" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupBox_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageButton_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="label_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LedBulb_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="numerical_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="资料格式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="数据类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以上位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以下位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="picture_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PLC_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="三菱PLC-IP" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="三菱PLC-端口" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="三菱PLC-类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="三菱PLC-链接类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="西门子PLC-IP" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="西门子PLC-端口" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="西门子PLC-类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="西门子PLC-链接类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODBUS-TCP-PLC-IP" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODBUS-TCP-PLC-端口11" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODBUS-TCP-PLC-类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODBUS-TCP-PLC-链接类型" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Profilepicture" Type="image" Nullable="false" />
+          <Property Name="ProfilepictureText" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScrollingText_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Switch_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tag common parameters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FROM" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.Button_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Button_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Control-state-0-list" />
+            <PropertyRef Name="Control-state-0-picture" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Control-state-1-list" />
+            <PropertyRef Name="Control-state-1-picture" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Expr1" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Expr2" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-picture" Type="int" Nullable="false" />
+          <Property Name="Expr3" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-picture" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.doughnut_Chart_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="doughnut_Chart_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="资料格式" />
+            <PropertyRef Name="数据类型" />
+            <PropertyRef Name="小数点以上位数" />
+            <PropertyRef Name="小数点以下位数" />
+            <PropertyRef Name="操作安全时间" />
+            <PropertyRef Name="通道数量" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="资料格式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="数据类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以上位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以下位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="通道数量" Type="int" Nullable="false" />
+          <Property Name="Name_Text" Type="nchar" MaxLength="500" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.GroupBox_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="GroupBox_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.ImageButton_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ImageButton_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.label_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="label_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FROM" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="Control-state-0_flicker" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FROM" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.LedBulb_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="LedBulb_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.numerical_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="numerical_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="资料格式" />
+            <PropertyRef Name="数据类型" />
+            <PropertyRef Name="小数点以上位数" />
+            <PropertyRef Name="小数点以下位数" />
+            <PropertyRef Name="操作安全时间" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Control-state-0-list" />
+            <PropertyRef Name="Control-state-0-picture" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Control-state-1-list" />
+            <PropertyRef Name="Control-state-1-picture" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="资料格式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="数据类型" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以上位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="小数点以下位数" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Expr2" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-picture" Type="int" Nullable="false" />
+          <Property Name="Expr3" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-1-picture" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.picture_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="picture_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0-list" />
+            <PropertyRef Name="Control-state-0-picture" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-list" Type="int" Nullable="false" />
+          <Property Name="Control-state-0-picture" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.ScrollingText_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ScrollingText_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Uppercomputer.dbo.Switch_Class”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Switch_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址-具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址-具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control-type" />
+            <PropertyRef Name="Control-state-0" />
+            <PropertyRef Name="Control-state-0_typeface" />
+            <PropertyRef Name="Control-state-0_colour" />
+            <PropertyRef Name="Control-state-0_size" />
+            <PropertyRef Name="Control-state-0_aligning" />
+            <PropertyRef Name="Control-state-0_content" />
+            <PropertyRef Name="Control-state-0_flicker" />
+            <PropertyRef Name="Control-state-1" />
+            <PropertyRef Name="Control-state-1_typeface" />
+            <PropertyRef Name="Control-state-1_colour" />
+            <PropertyRef Name="Control-state-1_size" />
+            <PropertyRef Name="Control-state-1_aligning" />
+            <PropertyRef Name="Control-state-1_content1" />
+            <PropertyRef Name="Control-state-1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FORM" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="位指示灯" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="位切换开关" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="读写设备" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写设备_地址-具体地址" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="读写不同地址_ON_OFF" Type="int" Nullable="false" />
+          <Property Name="写设备_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="写设备_地址-具体地址_复选" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作模式" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="操作安全时间" Type="nchar" MaxLength="50" />
+          <Property Name="Control-type" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0" Type="int" Nullable="false" />
+          <Property Name="Control-state-0_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-0_content" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-0_flicker" Type="int" Nullable="false" />
+          <Property Name="Control-state-1" Type="int" Nullable="false" />
+          <Property Name="Control-state-1_typeface" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_colour" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_size" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_aligning" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Control-state-1_content1" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Control-state-1_flicker" Type="int" Nullable="false" />
+          <Property Name="location" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="size" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UppercomputerModelStoreContainer">
+          <EntitySet Name="Button_parameter" EntityType="Self.Button_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Control_layer" EntityType="Self.Control_layer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="control-location" EntityType="Self.control-location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doughnut_Chart_parameter" EntityType="Self.doughnut_Chart_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_message" EntityType="Self.Event_message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="General parameters of picture" EntityType="Self.General parameters of picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupBox_parameter" EntityType="Self.GroupBox_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageButton_parameter" EntityType="Self.ImageButton_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="label_parameter" EntityType="Self.label_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LedBulb_parameter" EntityType="Self.LedBulb_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="numerical_parameter" EntityType="Self.numerical_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="picture_parameter" EntityType="Self.picture_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PLC_parameter" EntityType="Self.PLC_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScrollingText_parameter" EntityType="Self.ScrollingText_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Switch_parameter" EntityType="Self.Switch_parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag common parameters" EntityType="Self.Tag common parameters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Button_Class" EntityType="Self.Button_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Button_Class].[ID] AS [ID], 
+    [Button_Class].[FORM] AS [FORM], 
+    [Button_Class].[位指示灯] AS [位指示灯], 
+    [Button_Class].[位切换开关] AS [位切换开关], 
+    [Button_Class].[读写设备] AS [读写设备], 
+    [Button_Class].[读写设备_地址] AS [读写设备_地址], 
+    [Button_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [Button_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [Button_Class].[写设备_复选] AS [写设备_复选], 
+    [Button_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [Button_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [Button_Class].[操作模式] AS [操作模式], 
+    [Button_Class].[操作安全时间] AS [操作安全时间], 
+    [Button_Class].[Control-type] AS [Control-type], 
+    [Button_Class].[Control-state-0] AS [Control-state-0], 
+    [Button_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [Button_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [Button_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [Button_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [Button_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [Button_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [Button_Class].[Control-state-1] AS [Control-state-1], 
+    [Button_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [Button_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [Button_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [Button_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [Button_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [Button_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [Button_Class].[location] AS [location], 
+    [Button_Class].[size] AS [size], 
+    [Button_Class].[Expr1] AS [Expr1], 
+    [Button_Class].[Expr2] AS [Expr2], 
+    [Button_Class].[Control-state-0-list] AS [Control-state-0-list], 
+    [Button_Class].[Control-state-0-picture] AS [Control-state-0-picture], 
+    [Button_Class].[Expr3] AS [Expr3], 
+    [Button_Class].[Control-state-1-list] AS [Control-state-1-list], 
+    [Button_Class].[Control-state-1-picture] AS [Control-state-1-picture]
+    FROM [dbo].[Button_Class] AS [Button_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="doughnut_Chart_Class" EntityType="Self.doughnut_Chart_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [doughnut_Chart_Class].[ID] AS [ID], 
+    [doughnut_Chart_Class].[FORM] AS [FORM], 
+    [doughnut_Chart_Class].[读写设备] AS [读写设备], 
+    [doughnut_Chart_Class].[读写设备_地址] AS [读写设备_地址], 
+    [doughnut_Chart_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [doughnut_Chart_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [doughnut_Chart_Class].[写设备_复选] AS [写设备_复选], 
+    [doughnut_Chart_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [doughnut_Chart_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [doughnut_Chart_Class].[资料格式] AS [资料格式], 
+    [doughnut_Chart_Class].[数据类型] AS [数据类型], 
+    [doughnut_Chart_Class].[小数点以上位数] AS [小数点以上位数], 
+    [doughnut_Chart_Class].[小数点以下位数] AS [小数点以下位数], 
+    [doughnut_Chart_Class].[操作安全时间] AS [操作安全时间], 
+    [doughnut_Chart_Class].[通道数量] AS [通道数量], 
+    [doughnut_Chart_Class].[Name_Text] AS [Name_Text], 
+    [doughnut_Chart_Class].[Control-type] AS [Control-type], 
+    [doughnut_Chart_Class].[Control-state-0] AS [Control-state-0], 
+    [doughnut_Chart_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [doughnut_Chart_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [doughnut_Chart_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [doughnut_Chart_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [doughnut_Chart_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [doughnut_Chart_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [doughnut_Chart_Class].[Control-state-1] AS [Control-state-1], 
+    [doughnut_Chart_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [doughnut_Chart_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [doughnut_Chart_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [doughnut_Chart_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [doughnut_Chart_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [doughnut_Chart_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [doughnut_Chart_Class].[location] AS [location], 
+    [doughnut_Chart_Class].[size] AS [size]
+    FROM [dbo].[doughnut_Chart_Class] AS [doughnut_Chart_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GroupBox_Class" EntityType="Self.GroupBox_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GroupBox_Class].[ID] AS [ID], 
+    [GroupBox_Class].[FORM] AS [FORM], 
+    [GroupBox_Class].[Control-type] AS [Control-type], 
+    [GroupBox_Class].[Control-state-0] AS [Control-state-0], 
+    [GroupBox_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [GroupBox_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [GroupBox_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [GroupBox_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [GroupBox_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [GroupBox_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [GroupBox_Class].[Control-state-1] AS [Control-state-1], 
+    [GroupBox_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [GroupBox_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [GroupBox_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [GroupBox_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [GroupBox_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [GroupBox_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [GroupBox_Class].[location] AS [location], 
+    [GroupBox_Class].[size] AS [size]
+    FROM [dbo].[GroupBox_Class] AS [GroupBox_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ImageButton_Class" EntityType="Self.ImageButton_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ImageButton_Class].[ID] AS [ID], 
+    [ImageButton_Class].[FORM] AS [FORM], 
+    [ImageButton_Class].[位指示灯] AS [位指示灯], 
+    [ImageButton_Class].[位切换开关] AS [位切换开关], 
+    [ImageButton_Class].[读写设备] AS [读写设备], 
+    [ImageButton_Class].[读写设备_地址] AS [读写设备_地址], 
+    [ImageButton_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [ImageButton_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [ImageButton_Class].[写设备_复选] AS [写设备_复选], 
+    [ImageButton_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [ImageButton_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [ImageButton_Class].[操作模式] AS [操作模式], 
+    [ImageButton_Class].[操作安全时间] AS [操作安全时间], 
+    [ImageButton_Class].[Control-type] AS [Control-type], 
+    [ImageButton_Class].[Control-state-0] AS [Control-state-0], 
+    [ImageButton_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [ImageButton_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [ImageButton_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [ImageButton_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [ImageButton_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [ImageButton_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [ImageButton_Class].[Control-state-1] AS [Control-state-1], 
+    [ImageButton_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [ImageButton_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [ImageButton_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [ImageButton_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [ImageButton_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [ImageButton_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [ImageButton_Class].[location] AS [location], 
+    [ImageButton_Class].[size] AS [size]
+    FROM [dbo].[ImageButton_Class] AS [ImageButton_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="label_Class" EntityType="Self.label_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [label_Class].[ID] AS [ID], 
+    [label_Class].[FROM] AS [FROM], 
+    [label_Class].[Control-type] AS [Control-type], 
+    [label_Class].[Control-state-0] AS [Control-state-0], 
+    [label_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [label_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [label_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [label_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [label_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [label_Class].[location] AS [location], 
+    [label_Class].[size] AS [size], 
+    [label_Class].[Control-state-0_flicker] AS [Control-state-0_flicker]
+    FROM [dbo].[label_Class] AS [label_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LedBulb_Class" EntityType="Self.LedBulb_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LedBulb_Class].[ID] AS [ID], 
+    [LedBulb_Class].[FORM] AS [FORM], 
+    [LedBulb_Class].[位指示灯] AS [位指示灯], 
+    [LedBulb_Class].[位切换开关] AS [位切换开关], 
+    [LedBulb_Class].[读写设备] AS [读写设备], 
+    [LedBulb_Class].[读写设备_地址] AS [读写设备_地址], 
+    [LedBulb_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [LedBulb_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [LedBulb_Class].[写设备_复选] AS [写设备_复选], 
+    [LedBulb_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [LedBulb_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [LedBulb_Class].[操作模式] AS [操作模式], 
+    [LedBulb_Class].[操作安全时间] AS [操作安全时间], 
+    [LedBulb_Class].[Control-type] AS [Control-type], 
+    [LedBulb_Class].[Control-state-0] AS [Control-state-0], 
+    [LedBulb_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [LedBulb_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [LedBulb_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [LedBulb_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [LedBulb_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [LedBulb_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [LedBulb_Class].[Control-state-1] AS [Control-state-1], 
+    [LedBulb_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [LedBulb_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [LedBulb_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [LedBulb_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [LedBulb_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [LedBulb_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [LedBulb_Class].[location] AS [location], 
+    [LedBulb_Class].[size] AS [size]
+    FROM [dbo].[LedBulb_Class] AS [LedBulb_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="numerical_Class" EntityType="Self.numerical_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [numerical_Class].[ID] AS [ID], 
+    [numerical_Class].[FORM] AS [FORM], 
+    [numerical_Class].[读写设备] AS [读写设备], 
+    [numerical_Class].[读写设备_地址] AS [读写设备_地址], 
+    [numerical_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [numerical_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [numerical_Class].[写设备_复选] AS [写设备_复选], 
+    [numerical_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [numerical_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [numerical_Class].[资料格式] AS [资料格式], 
+    [numerical_Class].[数据类型] AS [数据类型], 
+    [numerical_Class].[小数点以上位数] AS [小数点以上位数], 
+    [numerical_Class].[小数点以下位数] AS [小数点以下位数], 
+    [numerical_Class].[操作安全时间] AS [操作安全时间], 
+    [numerical_Class].[Control-type] AS [Control-type], 
+    [numerical_Class].[Control-state-0] AS [Control-state-0], 
+    [numerical_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [numerical_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [numerical_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [numerical_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [numerical_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [numerical_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [numerical_Class].[Control-state-1] AS [Control-state-1], 
+    [numerical_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [numerical_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [numerical_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [numerical_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [numerical_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [numerical_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [numerical_Class].[Expr1] AS [Expr1], 
+    [numerical_Class].[Expr2] AS [Expr2], 
+    [numerical_Class].[Control-state-0-list] AS [Control-state-0-list], 
+    [numerical_Class].[Control-state-0-picture] AS [Control-state-0-picture], 
+    [numerical_Class].[Expr3] AS [Expr3], 
+    [numerical_Class].[Control-state-1-list] AS [Control-state-1-list], 
+    [numerical_Class].[Control-state-1-picture] AS [Control-state-1-picture], 
+    [numerical_Class].[location] AS [location], 
+    [numerical_Class].[size] AS [size]
+    FROM [dbo].[numerical_Class] AS [numerical_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="picture_Class" EntityType="Self.picture_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [picture_Class].[ID] AS [ID], 
+    [picture_Class].[FORM] AS [FORM], 
+    [picture_Class].[Control-type] AS [Control-type], 
+    [picture_Class].[Control-state-0] AS [Control-state-0], 
+    [picture_Class].[Control-state-0-list] AS [Control-state-0-list], 
+    [picture_Class].[Control-state-0-picture] AS [Control-state-0-picture], 
+    [picture_Class].[location] AS [location], 
+    [picture_Class].[size] AS [size]
+    FROM [dbo].[picture_Class] AS [picture_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ScrollingText_Class" EntityType="Self.ScrollingText_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ScrollingText_Class].[ID] AS [ID], 
+    [ScrollingText_Class].[FORM] AS [FORM], 
+    [ScrollingText_Class].[Control-type] AS [Control-type], 
+    [ScrollingText_Class].[Control-state-0] AS [Control-state-0], 
+    [ScrollingText_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [ScrollingText_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [ScrollingText_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [ScrollingText_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [ScrollingText_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [ScrollingText_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [ScrollingText_Class].[Control-state-1] AS [Control-state-1], 
+    [ScrollingText_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [ScrollingText_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [ScrollingText_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [ScrollingText_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [ScrollingText_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [ScrollingText_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [ScrollingText_Class].[location] AS [location], 
+    [ScrollingText_Class].[size] AS [size]
+    FROM [dbo].[ScrollingText_Class] AS [ScrollingText_Class]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Switch_Class" EntityType="Self.Switch_Class" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Switch_Class].[ID] AS [ID], 
+    [Switch_Class].[FORM] AS [FORM], 
+    [Switch_Class].[位指示灯] AS [位指示灯], 
+    [Switch_Class].[位切换开关] AS [位切换开关], 
+    [Switch_Class].[读写设备] AS [读写设备], 
+    [Switch_Class].[读写设备_地址] AS [读写设备_地址], 
+    [Switch_Class].[读写设备_地址-具体地址] AS [读写设备_地址-具体地址], 
+    [Switch_Class].[读写不同地址_ON_OFF] AS [读写不同地址_ON_OFF], 
+    [Switch_Class].[写设备_复选] AS [写设备_复选], 
+    [Switch_Class].[写设备_地址_复选] AS [写设备_地址_复选], 
+    [Switch_Class].[写设备_地址-具体地址_复选] AS [写设备_地址-具体地址_复选], 
+    [Switch_Class].[操作模式] AS [操作模式], 
+    [Switch_Class].[操作安全时间] AS [操作安全时间], 
+    [Switch_Class].[Control-type] AS [Control-type], 
+    [Switch_Class].[Control-state-0] AS [Control-state-0], 
+    [Switch_Class].[Control-state-0_typeface] AS [Control-state-0_typeface], 
+    [Switch_Class].[Control-state-0_colour] AS [Control-state-0_colour], 
+    [Switch_Class].[Control-state-0_size] AS [Control-state-0_size], 
+    [Switch_Class].[Control-state-0_aligning] AS [Control-state-0_aligning], 
+    [Switch_Class].[Control-state-0_content] AS [Control-state-0_content], 
+    [Switch_Class].[Control-state-0_flicker] AS [Control-state-0_flicker], 
+    [Switch_Class].[Control-state-1] AS [Control-state-1], 
+    [Switch_Class].[Control-state-1_typeface] AS [Control-state-1_typeface], 
+    [Switch_Class].[Control-state-1_colour] AS [Control-state-1_colour], 
+    [Switch_Class].[Control-state-1_size] AS [Control-state-1_size], 
+    [Switch_Class].[Control-state-1_aligning] AS [Control-state-1_aligning], 
+    [Switch_Class].[Control-state-1_content1] AS [Control-state-1_content1], 
+    [Switch_Class].[Control-state-1_flicker] AS [Control-state-1_flicker], 
+    [Switch_Class].[location] AS [location], 
+    [Switch_Class].[size] AS [size]
+    FROM [dbo].[Switch_Class] AS [Switch_Class]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UppercomputerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="UppercomputerEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Button_parameter" EntityType="UppercomputerModel.Button_parameter" />
+          <EntitySet Name="control_location" EntityType="UppercomputerModel.control_location" />
+          <EntitySet Name="General_parameters_of_picture" EntityType="UppercomputerModel.General_parameters_of_picture" />
+          <EntitySet Name="numerical_parameter" EntityType="UppercomputerModel.numerical_parameter" />
+          <EntitySet Name="Profile" EntityType="UppercomputerModel.Profile" />
+          <EntitySet Name="Tag_common_parameters" EntityType="UppercomputerModel.Tag_common_parameters" />
+          <EntitySet Name="Button_Class" EntityType="UppercomputerModel.Button_Class" />
+          <EntitySet Name="label_Class" EntityType="UppercomputerModel.label_Class" />
+          <EntitySet Name="numerical_Class" EntityType="UppercomputerModel.numerical_Class" />
+          <EntitySet Name="picture_Class" EntityType="UppercomputerModel.picture_Class" />
+          <EntitySet Name="label_parameter" EntityType="UppercomputerModel.label_parameter" />
+          <EntitySet Name="picture_parameter" EntityType="UppercomputerModel.picture_parameter" />
+          <EntitySet Name="PLC_parameter" EntityType="UppercomputerModel.PLC_parameter" />
+          <EntitySet Name="Event_message" EntityType="UppercomputerModel.Event_message" />
+          <EntitySet Name="Switch_parameter" EntityType="UppercomputerModel.Switch_parameter" />
+          <EntitySet Name="Switch_Class" EntityType="UppercomputerModel.Switch_Class" />
+          <EntitySet Name="LedBulb_parameter" EntityType="UppercomputerModel.LedBulb_parameter" />
+          <EntitySet Name="LedBulb_Class" EntityType="UppercomputerModel.LedBulb_Class" />
+          <EntitySet Name="GroupBox_parameter" EntityType="UppercomputerModel.GroupBox_parameter" />
+          <EntitySet Name="ImageButton_parameter" EntityType="UppercomputerModel.ImageButton_parameter" />
+          <EntitySet Name="ScrollingText_parameter" EntityType="UppercomputerModel.ScrollingText_parameter" />
+          <EntitySet Name="GroupBox_Class" EntityType="UppercomputerModel.GroupBox_Class" />
+          <EntitySet Name="ImageButton_Class" EntityType="UppercomputerModel.ImageButton_Class" />
+          <EntitySet Name="ScrollingText_Class" EntityType="UppercomputerModel.ScrollingText_Class" />
+          <EntitySet Name="doughnut_Chart_parameter" EntityType="UppercomputerModel.doughnut_Chart_parameter" />
+          <EntitySet Name="doughnut_Chart_Class" EntityType="UppercomputerModel.doughnut_Chart_Class" />
+          <EntitySet Name="Control_layer" EntityType="UppercomputerModel.Control_layer" />
+        </EntityContainer>
+        <EntityType Name="Button_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="control_location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="General_parameters_of_picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_picture" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_picture" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="numerical_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="资料格式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="数据类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以上位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以下位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Profilepicture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProfilepictureText" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tag_common_parameters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FROM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Button_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Control_state_0_list" />
+            <PropertyRef Name="Control_state_0_picture" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Control_state_1_list" />
+            <PropertyRef Name="Control_state_1_picture" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Expr2" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_picture" Type="Int32" Nullable="false" />
+          <Property Name="Expr3" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_picture" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="label_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FROM" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="Control_state_0_flicker" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FROM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="numerical_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="资料格式" />
+            <PropertyRef Name="数据类型" />
+            <PropertyRef Name="小数点以上位数" />
+            <PropertyRef Name="小数点以下位数" />
+            <PropertyRef Name="操作安全时间" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Control_state_0_list" />
+            <PropertyRef Name="Control_state_0_picture" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Control_state_1_list" />
+            <PropertyRef Name="Control_state_1_picture" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="资料格式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="数据类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以上位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以下位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Expr2" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_picture" Type="Int32" Nullable="false" />
+          <Property Name="Expr3" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_picture" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="picture_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_list" />
+            <PropertyRef Name="Control_state_0_picture" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_list" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_picture" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="label_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="picture_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PLC_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="三菱PLC_IP" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="三菱PLC_端口" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="三菱PLC_类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="三菱PLC_链接类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="西门子PLC_IP" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="西门子PLC_端口" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="西门子PLC_类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="西门子PLC_链接类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="MODBUS_TCP_PLC_IP" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="MODBUS_TCP_PLC_端口11" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="MODBUS_TCP_PLC_类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="MODBUS_TCP_PLC_链接类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Event_message">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="类型" Type="Int32" Nullable="false" />
+          <Property Name="设备" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="设备_地址" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="设备_具体地址" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="位触发条件" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="字触发条件" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="字触发条件_具体" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="报警内容" Type="String" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Switch_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Switch_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LedBulb_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LedBulb_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroupBox_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImageButton_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScrollingText_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroupBox_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImageButton_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="位指示灯" />
+            <PropertyRef Name="位切换开关" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="操作模式" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="位指示灯" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="位切换开关" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作模式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScrollingText_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="doughnut_Chart_parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="资料格式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="数据类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以上位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以下位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="通道数量" Type="Int32" Nullable="false" />
+          <Property Name="Name_Text" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="doughnut_Chart_Class">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FORM" />
+            <PropertyRef Name="读写设备" />
+            <PropertyRef Name="读写设备_地址" />
+            <PropertyRef Name="读写设备_地址_具体地址" />
+            <PropertyRef Name="读写不同地址_ON_OFF" />
+            <PropertyRef Name="写设备_复选" />
+            <PropertyRef Name="写设备_地址_复选" />
+            <PropertyRef Name="写设备_地址_具体地址_复选" />
+            <PropertyRef Name="资料格式" />
+            <PropertyRef Name="数据类型" />
+            <PropertyRef Name="小数点以上位数" />
+            <PropertyRef Name="小数点以下位数" />
+            <PropertyRef Name="操作安全时间" />
+            <PropertyRef Name="通道数量" />
+            <PropertyRef Name="Control_type" />
+            <PropertyRef Name="Control_state_0" />
+            <PropertyRef Name="Control_state_0_typeface" />
+            <PropertyRef Name="Control_state_0_colour" />
+            <PropertyRef Name="Control_state_0_size" />
+            <PropertyRef Name="Control_state_0_aligning" />
+            <PropertyRef Name="Control_state_0_content" />
+            <PropertyRef Name="Control_state_0_flicker" />
+            <PropertyRef Name="Control_state_1" />
+            <PropertyRef Name="Control_state_1_typeface" />
+            <PropertyRef Name="Control_state_1_colour" />
+            <PropertyRef Name="Control_state_1_size" />
+            <PropertyRef Name="Control_state_1_aligning" />
+            <PropertyRef Name="Control_state_1_content1" />
+            <PropertyRef Name="Control_state_1_flicker" />
+            <PropertyRef Name="location" />
+            <PropertyRef Name="size" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写设备_地址_具体地址" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="读写不同地址_ON_OFF" Type="Int32" Nullable="false" />
+          <Property Name="写设备_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="写设备_地址_具体地址_复选" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="资料格式" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="数据类型" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以上位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="小数点以下位数" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="操作安全时间" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="通道数量" Type="Int32" Nullable="false" />
+          <Property Name="Name_Text" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Control_type" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_0_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_content" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_0_flicker" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1" Type="Int32" Nullable="false" />
+          <Property Name="Control_state_1_typeface" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_colour" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_aligning" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_content1" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Control_state_1_flicker" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="size" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Control_layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FORM" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Upper_layer" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UppercomputerModelStoreContainer" CdmEntityContainer="UppercomputerEntities2">
+          <EntitySetMapping Name="Button_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.Button_parameter">
+              <MappingFragment StoreEntitySet="Button_parameter">
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="control_location">
+            <EntityTypeMapping TypeName="UppercomputerModel.control_location">
+              <MappingFragment StoreEntitySet="control-location">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="General_parameters_of_picture">
+            <EntityTypeMapping TypeName="UppercomputerModel.General_parameters_of_picture">
+              <MappingFragment StoreEntitySet="General parameters of picture">
+                <ScalarProperty Name="Control_state_1_picture" ColumnName="Control-state-1-picture" />
+                <ScalarProperty Name="Control_state_1_list" ColumnName="Control-state-1-list" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_picture" ColumnName="Control-state-0-picture" />
+                <ScalarProperty Name="Control_state_0_list" ColumnName="Control-state-0-list" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="numerical_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.numerical_parameter">
+              <MappingFragment StoreEntitySet="numerical_parameter">
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="小数点以下位数" ColumnName="小数点以下位数" />
+                <ScalarProperty Name="小数点以上位数" ColumnName="小数点以上位数" />
+                <ScalarProperty Name="数据类型" ColumnName="数据类型" />
+                <ScalarProperty Name="资料格式" ColumnName="资料格式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profile">
+            <EntityTypeMapping TypeName="UppercomputerModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="ProfilepictureText" ColumnName="ProfilepictureText" />
+                <ScalarProperty Name="Profilepicture" ColumnName="Profilepicture" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tag_common_parameters">
+            <EntityTypeMapping TypeName="UppercomputerModel.Tag_common_parameters">
+              <MappingFragment StoreEntitySet="Tag common parameters">
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FROM" ColumnName="FROM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Button_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.Button_Class">
+              <MappingFragment StoreEntitySet="Button_Class">
+                <ScalarProperty Name="Control_state_1_picture" ColumnName="Control-state-1-picture" />
+                <ScalarProperty Name="Control_state_1_list" ColumnName="Control-state-1-list" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Control_state_0_picture" ColumnName="Control-state-0-picture" />
+                <ScalarProperty Name="Control_state_0_list" ColumnName="Control-state-0-list" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="label_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.label_Class">
+              <MappingFragment StoreEntitySet="label_Class">
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FROM" ColumnName="FROM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="numerical_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.numerical_Class">
+              <MappingFragment StoreEntitySet="numerical_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_picture" ColumnName="Control-state-1-picture" />
+                <ScalarProperty Name="Control_state_1_list" ColumnName="Control-state-1-list" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Control_state_0_picture" ColumnName="Control-state-0-picture" />
+                <ScalarProperty Name="Control_state_0_list" ColumnName="Control-state-0-list" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="小数点以下位数" ColumnName="小数点以下位数" />
+                <ScalarProperty Name="小数点以上位数" ColumnName="小数点以上位数" />
+                <ScalarProperty Name="数据类型" ColumnName="数据类型" />
+                <ScalarProperty Name="资料格式" ColumnName="资料格式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="picture_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.picture_Class">
+              <MappingFragment StoreEntitySet="picture_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_0_picture" ColumnName="Control-state-0-picture" />
+                <ScalarProperty Name="Control_state_0_list" ColumnName="Control-state-0-list" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="label_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.label_parameter">
+              <MappingFragment StoreEntitySet="label_parameter">
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="picture_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.picture_parameter">
+              <MappingFragment StoreEntitySet="picture_parameter">
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLC_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.PLC_parameter">
+              <MappingFragment StoreEntitySet="PLC_parameter">
+                <ScalarProperty Name="MODBUS_TCP_PLC_链接类型" ColumnName="MODBUS-TCP-PLC-链接类型" />
+                <ScalarProperty Name="MODBUS_TCP_PLC_类型" ColumnName="MODBUS-TCP-PLC-类型" />
+                <ScalarProperty Name="MODBUS_TCP_PLC_端口11" ColumnName="MODBUS-TCP-PLC-端口11" />
+                <ScalarProperty Name="MODBUS_TCP_PLC_IP" ColumnName="MODBUS-TCP-PLC-IP" />
+                <ScalarProperty Name="西门子PLC_链接类型" ColumnName="西门子PLC-链接类型" />
+                <ScalarProperty Name="西门子PLC_类型" ColumnName="西门子PLC-类型" />
+                <ScalarProperty Name="西门子PLC_端口" ColumnName="西门子PLC-端口" />
+                <ScalarProperty Name="西门子PLC_IP" ColumnName="西门子PLC-IP" />
+                <ScalarProperty Name="三菱PLC_链接类型" ColumnName="三菱PLC-链接类型" />
+                <ScalarProperty Name="三菱PLC_类型" ColumnName="三菱PLC-类型" />
+                <ScalarProperty Name="三菱PLC_端口" ColumnName="三菱PLC-端口" />
+                <ScalarProperty Name="三菱PLC_IP" ColumnName="三菱PLC-IP" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_message">
+            <EntityTypeMapping TypeName="UppercomputerModel.Event_message">
+              <MappingFragment StoreEntitySet="Event_message">
+                <ScalarProperty Name="报警内容" ColumnName="报警内容" />
+                <ScalarProperty Name="字触发条件_具体" ColumnName="字触发条件_具体" />
+                <ScalarProperty Name="字触发条件" ColumnName="字触发条件" />
+                <ScalarProperty Name="位触发条件" ColumnName="位触发条件" />
+                <ScalarProperty Name="设备_具体地址" ColumnName="设备_具体地址" />
+                <ScalarProperty Name="设备_地址" ColumnName="设备_地址" />
+                <ScalarProperty Name="设备" ColumnName="设备" />
+                <ScalarProperty Name="类型" ColumnName="类型" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Switch_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.Switch_parameter">
+              <MappingFragment StoreEntitySet="Switch_parameter">
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Switch_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.Switch_Class">
+              <MappingFragment StoreEntitySet="Switch_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LedBulb_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.LedBulb_parameter">
+              <MappingFragment StoreEntitySet="LedBulb_parameter">
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LedBulb_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.LedBulb_Class">
+              <MappingFragment StoreEntitySet="LedBulb_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupBox_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.GroupBox_parameter">
+              <MappingFragment StoreEntitySet="GroupBox_parameter">
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageButton_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.ImageButton_parameter">
+              <MappingFragment StoreEntitySet="ImageButton_parameter">
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScrollingText_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.ScrollingText_parameter">
+              <MappingFragment StoreEntitySet="ScrollingText_parameter">
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupBox_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.GroupBox_Class">
+              <MappingFragment StoreEntitySet="GroupBox_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageButton_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.ImageButton_Class">
+              <MappingFragment StoreEntitySet="ImageButton_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="操作模式" ColumnName="操作模式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="位切换开关" ColumnName="位切换开关" />
+                <ScalarProperty Name="位指示灯" ColumnName="位指示灯" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScrollingText_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.ScrollingText_Class">
+              <MappingFragment StoreEntitySet="ScrollingText_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doughnut_Chart_parameter">
+            <EntityTypeMapping TypeName="UppercomputerModel.doughnut_Chart_parameter">
+              <MappingFragment StoreEntitySet="doughnut_Chart_parameter">
+                <ScalarProperty Name="Name_Text" ColumnName="Name_Text" />
+                <ScalarProperty Name="通道数量" ColumnName="通道数量" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="小数点以下位数" ColumnName="小数点以下位数" />
+                <ScalarProperty Name="小数点以上位数" ColumnName="小数点以上位数" />
+                <ScalarProperty Name="数据类型" ColumnName="数据类型" />
+                <ScalarProperty Name="资料格式" ColumnName="资料格式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doughnut_Chart_Class">
+            <EntityTypeMapping TypeName="UppercomputerModel.doughnut_Chart_Class">
+              <MappingFragment StoreEntitySet="doughnut_Chart_Class">
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="Control_state_1_flicker" ColumnName="Control-state-1_flicker" />
+                <ScalarProperty Name="Control_state_1_content1" ColumnName="Control-state-1_content1" />
+                <ScalarProperty Name="Control_state_1_aligning" ColumnName="Control-state-1_aligning" />
+                <ScalarProperty Name="Control_state_1_size" ColumnName="Control-state-1_size" />
+                <ScalarProperty Name="Control_state_1_colour" ColumnName="Control-state-1_colour" />
+                <ScalarProperty Name="Control_state_1_typeface" ColumnName="Control-state-1_typeface" />
+                <ScalarProperty Name="Control_state_1" ColumnName="Control-state-1" />
+                <ScalarProperty Name="Control_state_0_flicker" ColumnName="Control-state-0_flicker" />
+                <ScalarProperty Name="Control_state_0_content" ColumnName="Control-state-0_content" />
+                <ScalarProperty Name="Control_state_0_aligning" ColumnName="Control-state-0_aligning" />
+                <ScalarProperty Name="Control_state_0_size" ColumnName="Control-state-0_size" />
+                <ScalarProperty Name="Control_state_0_colour" ColumnName="Control-state-0_colour" />
+                <ScalarProperty Name="Control_state_0_typeface" ColumnName="Control-state-0_typeface" />
+                <ScalarProperty Name="Control_state_0" ColumnName="Control-state-0" />
+                <ScalarProperty Name="Control_type" ColumnName="Control-type" />
+                <ScalarProperty Name="Name_Text" ColumnName="Name_Text" />
+                <ScalarProperty Name="通道数量" ColumnName="通道数量" />
+                <ScalarProperty Name="操作安全时间" ColumnName="操作安全时间" />
+                <ScalarProperty Name="小数点以下位数" ColumnName="小数点以下位数" />
+                <ScalarProperty Name="小数点以上位数" ColumnName="小数点以上位数" />
+                <ScalarProperty Name="数据类型" ColumnName="数据类型" />
+                <ScalarProperty Name="资料格式" ColumnName="资料格式" />
+                <ScalarProperty Name="写设备_地址_具体地址_复选" ColumnName="写设备_地址-具体地址_复选" />
+                <ScalarProperty Name="写设备_地址_复选" ColumnName="写设备_地址_复选" />
+                <ScalarProperty Name="写设备_复选" ColumnName="写设备_复选" />
+                <ScalarProperty Name="读写不同地址_ON_OFF" ColumnName="读写不同地址_ON_OFF" />
+                <ScalarProperty Name="读写设备_地址_具体地址" ColumnName="读写设备_地址-具体地址" />
+                <ScalarProperty Name="读写设备_地址" ColumnName="读写设备_地址" />
+                <ScalarProperty Name="读写设备" ColumnName="读写设备" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Control_layer">
+            <EntityTypeMapping TypeName="UppercomputerModel.Control_layer">
+              <MappingFragment StoreEntitySet="Control_layer">
+                <ScalarProperty Name="Upper_layer" ColumnName="Upper_layer" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
